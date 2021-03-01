@@ -23,6 +23,7 @@ function outer() {
 */
   
 // Code Here
+var inner = outer()
 
 
 
@@ -30,6 +31,7 @@ function outer() {
 
 //Code Here
 
+inner()
 
 
 ////////// PROBLEM 2 //////////
@@ -53,6 +55,8 @@ function callFriend(name) {
 
 //Code Here
 
+let callJake = callFriend('Jake')
+console.log(callJake('435-555-9248'))
 
 
 ////////// PROBLEM 3 //////////
@@ -62,6 +66,13 @@ function callFriend(name) {
 */
 
 //Code Here
+function makeCounter() {
+  let counter = 0;
+   let addOne = function() {
+     return counter + 1;
+   }
+   return addOne
+    }
 
 
 
@@ -113,9 +124,12 @@ function motivation( firstname, lastname ) {
   var welcomeText = "You're doing awesome, keep it up";
 
   // code message function here.
+function message() {
+  return `"You're doing awesome, keep it up ${firstname} ${lastname}".`
+}
 
   //Uncommment this to return the value of your message function
-  //return message;
+  return message;
 }
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
@@ -144,8 +158,12 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+    function publicMethod() {
+      return privateMethod();
+    }
   };
 })();
+module.publicMethod();
 
 
 
@@ -163,8 +181,15 @@ function secretNumber() {
 
   return {
     // Code here
+    addToSecret:function(num) {
+      return (num + secret);
+    },
+    takeAwayFromSecret:function(num) {
+      return (secret - num);
+    },
   };
 }
+
 
 
 
