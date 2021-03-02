@@ -108,7 +108,33 @@ class ProgressiveManager extends Manager {
    this.title = `Not a Manager`;
    this.bonus= 0;
 }
+barelyManager(){
+  if (this.report > 0 && this.report <= 3) {
+    return this.title = 'Barely Manger';
+  }
 }
+mostlyManager(){
+  if (this.report > 3 && this.report <=10) {
+    return this.title = 'Mostly Manager';
+  }
+}
+_manager(){
+  if (this.report > 10 && this.report <= 50) {
+    return this.title = 'Manager';
+  }
+}
+managerPlus(){
+  if (this.report > 50 && this.report <= 100) {
+    return this.title = 'Manager Plus';
+  }
+}
+bestestManager(){
+  if (this.report > 100) {
+    return this.title = 'Bestest Manager';
+  }
+}
+}
+
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
